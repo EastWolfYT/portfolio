@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="/LogoMP.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -291,6 +292,89 @@
     .skill-chip.webpack .dot { background: #8dd6f9; }
     .skill-chip.git .dot { background: #f1502f; }
 
+    /* ── EXPERIENCE ── */
+    #experience .timeline {
+      margin-top: 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    #experience .timeline::before {
+      content: '';
+      position: absolute;
+      left: 23px; top: 8px; bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent1), var(--accent2), transparent);
+      border-radius: 99px;
+    }
+    .exp-item {
+      display: flex;
+      gap: 28px;
+      padding-bottom: 40px;
+      position: relative;
+    }
+    .exp-item:last-child { padding-bottom: 0; }
+    .exp-dot-wrap {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+    }
+    .exp-dot {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(139,92,246,0.2));
+      border: 1px solid rgba(99,102,241,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .exp-content {
+      background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      flex: 1;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .exp-content:hover {
+      border-color: rgba(99,102,241,0.25);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+    .exp-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+    .exp-company {
+      font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .exp-period {
+      font-size: 0.75rem; font-weight: 500;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent3);
+      background: rgba(6,182,212,0.1);
+      border: 1px solid rgba(6,182,212,0.2);
+      border-radius: 6px;
+      padding: 3px 10px;
+      white-space: nowrap;
+    }
+    .exp-role {
+      font-size: 0.88rem; font-weight: 500;
+      color: #a5b4fc;
+      margin-bottom: 10px;
+    }
+    .exp-desc {
+      font-size: 0.88rem; line-height: 1.65;
+      color: #64748b;
+    }
+
     /* ── PROJECTS ── */
     #projects .projects-grid {
       display: grid;
@@ -511,6 +595,7 @@
     <span class="nav-logo">mpokrywka.pl</span>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -611,6 +696,52 @@
     </div>
   </section>
 
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="reveal">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">Where I've worked</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="timeline">
+
+      <div class="exp-item reveal">
+        <div class="exp-dot-wrap">
+          <div class="exp-dot">⚙️</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <span class="exp-company">Aptiv</span>
+            <span class="exp-period">Oct 2025</span>
+          </div>
+          <p class="exp-role">Embedded Software Engineering Intern</p>
+          <p class="exp-desc">
+            Internship at Aptiv's Embedded Software Engineering team —
+            working with embedded systems in an automotive environment.
+          </p>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-dot-wrap">
+          <div class="exp-dot">⚙️</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <span class="exp-company">Aptiv</span>
+            <span class="exp-period">Feb 2025</span>
+          </div>
+          <p class="exp-role">Embedded Software Engineering Intern</p>
+          <p class="exp-desc">
+            First internship at Aptiv's Embedded Software Engineering team —
+            introduction to embedded development in an automotive software context.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- PROJECTS -->
   <section id="projects">
     <div class="reveal">
@@ -646,7 +777,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             Source Code
           </a>
-          <a href="#" class="project-link demo">
+          <a href="https://eastwolfyt.github.io/vue-store-project/"" class="project-link demo">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Live Demo
           </a>
@@ -675,7 +806,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             Source Code
           </a>
-          <a href="#" class="project-link demo">
+          <a href="https://eastwolfyt.github.io/dr-mario-typescript/" class="project-link demo">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Play Game
           </a>
